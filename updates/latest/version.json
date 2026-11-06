@@ -1,6 +1,6 @@
 {
-  "version": "2.3",
-  "released_at": "2026-11-06 08:00:55",
+  "version": "2.4",
+  "released_at": "2026-11-06 08:15:00",
   "base_url": "https://raw.githubusercontent.com/pliskin15/Contablauncher/updates/updates/latest",
   "files": {
     "_internal/_asyncio.pyd": {
@@ -10016,7 +10016,7 @@
       "size": 22555
     },
     "versao.txt": {
-      "sha256": "96dee6ab2bdbbe469c55bd9f52530a7f8098d787299a1ce745c1e9806eef86d8",
+      "sha256": "a7f5dccaa14abfeafe0de7760ca06eec6e2d74e5527520a852aa464ff58e5b24",
       "size": 5
     }
   }
