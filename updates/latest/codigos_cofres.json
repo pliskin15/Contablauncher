@@ -1,0 +1,596 @@
+{
+  "lojas": [
+    {
+      "uf": "MT",
+      "loja": "1",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "21885"
+    },
+    {
+      "uf": "MT",
+      "loja": "2",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "23882"
+    },
+    {
+      "uf": "MT",
+      "loja": "3",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "24218"
+    },
+    {
+      "uf": "MT",
+      "loja": "4",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "25982"
+    },
+    {
+      "uf": "MT",
+      "loja": "5",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "25291"
+    },
+    {
+      "uf": "MA",
+      "loja": "6",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "26656"
+    },
+    {
+      "uf": "MA",
+      "loja": "7",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "24043"
+    },
+    {
+      "uf": "MT",
+      "loja": "8",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "23293"
+    },
+    {
+      "uf": "AM",
+      "loja": "9",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "25112"
+    },
+    {
+      "uf": "MT",
+      "loja": "10",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22662"
+    },
+    {
+      "uf": "MT",
+      "loja": "11",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "20406"
+    },
+    {
+      "uf": "MA",
+      "loja": "12",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "26360"
+    },
+    {
+      "uf": "MA",
+      "loja": "13",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "23049"
+    },
+    {
+      "uf": "MT",
+      "loja": "14",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "20493"
+    },
+    {
+      "uf": "MA",
+      "loja": "15",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "26364"
+    },
+    {
+      "uf": "RR",
+      "loja": "16",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22828"
+    },
+    {
+      "uf": "MT",
+      "loja": "17",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "20143"
+    },
+    {
+      "uf": "AM",
+      "loja": "18",
+      "nome": "SMARTINS ATACADO DE PECAS PARA VEICULOS LTDA",
+      "cofre": "20323"
+    },
+    {
+      "uf": "MA",
+      "loja": "19",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "20602"
+    },
+    {
+      "uf": "MT",
+      "loja": "20",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "21130"
+    },
+    {
+      "uf": "MT",
+      "loja": "21",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22338"
+    },
+    {
+      "uf": "MT",
+      "loja": "22",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22226"
+    },
+    {
+      "uf": "AM",
+      "loja": "24",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "23762"
+    },
+    {
+      "uf": "AM",
+      "loja": "30",
+      "nome": "PEMAZA 30 COMPENSA",
+      "cofre": "21401"
+    },
+    {
+      "uf": "AM",
+      "loja": "31",
+      "nome": "PEMAZA 31 AM FLORES",
+      "cofre": "21411"
+    },
+    {
+      "uf": "AM",
+      "loja": "32",
+      "nome": "PEMAZA 32 SUFRAMA",
+      "cofre": "20099"
+    },
+    {
+      "uf": "AM",
+      "loja": "33",
+      "nome": "PEMAZA 33 SAO GERALDO",
+      "cofre": "23094"
+    },
+    {
+      "uf": "AM",
+      "loja": "34",
+      "nome": "PEMAZA 34 ALEIXO",
+      "cofre": "23087"
+    },
+    {
+      "uf": "RR",
+      "loja": "35",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22146"
+    },
+    {
+      "uf": "AM",
+      "loja": "36",
+      "nome": "PEMAZA 36 CIDADE NOVA",
+      "cofre": "21416"
+    },
+    {
+      "uf": "AM",
+      "loja": "37",
+      "nome": "PEMAZA 37 CENTRO",
+      "cofre": "20210"
+    },
+    {
+      "uf": "AM",
+      "loja": "38",
+      "nome": "PEMAZA 38 PRACA 14",
+      "cofre": "21404"
+    },
+    {
+      "uf": "PA",
+      "loja": "39",
+      "nome": "PMZ LJ 39 SANTARENZINHO",
+      "cofre": "17843608970"
+    },
+    {
+      "uf": "AP",
+      "loja": "40",
+      "nome": "PEMAZA NACOES UNIDAS",
+      "cofre": "17843691170"
+    },
+    {
+      "uf": "AM",
+      "loja": "41",
+      "nome": "PEMAZA 41 GOV JOSE LINDOSO",
+      "cofre": "21405"
+    },
+    {
+      "uf": "AM",
+      "loja": "42",
+      "nome": "PEMAZA 014 ALVORADA",
+      "cofre": "24128"
+    },
+    {
+      "uf": "AM",
+      "loja": "43",
+      "nome": "PEMAZA AUTAZ MIRIM",
+      "cofre": "21400"
+    },
+    {
+      "uf": "AM",
+      "loja": "44",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "21183"
+    },
+    {
+      "uf": "RR",
+      "loja": "45",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22257"
+    },
+    {
+      "uf": "AP",
+      "loja": "46",
+      "nome": "PEMAZA RUA DO ACAI",
+      "cofre": "17843601970"
+    },
+    {
+      "uf": "RR",
+      "loja": "47",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "23687"
+    },
+    {
+      "uf": "AM",
+      "loja": "48",
+      "nome": "PEMAZA CAMAPUA",
+      "cofre": "21363"
+    },
+    {
+      "uf": "AP",
+      "loja": "49",
+      "nome": "PEMAZA BURITIZAL",
+      "cofre": "17843602270"
+    },
+    {
+      "uf": "MT",
+      "loja": "50",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "20767"
+    },
+    {
+      "uf": "RR",
+      "loja": "51",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22141"
+    },
+    {
+      "uf": "MT",
+      "loja": "52",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "31012"
+    },
+    {
+      "uf": "RR",
+      "loja": "54",
+      "nome": "FRW ATACADO LTDA",
+      "cofre": "24229"
+    },
+    {
+      "uf": "PA",
+      "loja": "55",
+      "nome": "PEMAZA BOA ESPERANCA",
+      "cofre": "31761602470"
+    },
+    {
+      "uf": "PA",
+      "loja": "57",
+      "nome": "PMZ RUROPOLIS",
+      "cofre": "17843604870"
+    },
+    {
+      "uf": "PA",
+      "loja": "59",
+      "nome": "PMZ URUARA",
+      "cofre": "17843605070"
+    },
+    {
+      "uf": "PA",
+      "loja": "58",
+      "nome": "PEMAZA ALTAMIRA",
+      "cofre": "15440602770"
+    },
+    {
+      "uf": "PA",
+      "loja": "60",
+      "nome": "PEMAZA SANTAREM",
+      "cofre": "31761000270"
+    },
+    {
+      "uf": "PA",
+      "loja": "61",
+      "nome": "PMZ 61 JOSE BONIFACIO",
+      "cofre": "20441"
+    },
+    {
+      "uf": "PA",
+      "loja": "63",
+      "nome": "PEMAZA PARAUAPEBAS",
+      "cofre": "31761003570"
+    },
+    {
+      "uf": "PA",
+      "loja": "65",
+      "nome": "PEMAZA 065 GUAJARA",
+      "cofre": "20446"
+    },
+    {
+      "uf": "PA",
+      "loja": "66",
+      "nome": "PEMAZA 066 SACRAMENTA",
+      "cofre": "22310"
+    },
+    {
+      "uf": "PA",
+      "loja": "67",
+      "nome": "PEMAZA 067 COQUEIRO",
+      "cofre": "22985"
+    },
+    {
+      "uf": "PA",
+      "loja": "68",
+      "nome": "PEMAZA 068 MARITUBA",
+      "cofre": "23630"
+    },
+    {
+      "uf": "PA",
+      "loja": "69",
+      "nome": "PEMAZA 069 SACRAMENTA",
+      "cofre": "21174"
+    },
+    {
+      "uf": "PA",
+      "loja": "70",
+      "nome": "PMZ 70 ICOARACI",
+      "cofre": "22185"
+    },
+    {
+      "uf": "PA",
+      "loja": "71",
+      "nome": "PMZ  71 COQUEIRO",
+      "cofre": "21522"
+    },
+    {
+      "uf": "PA",
+      "loja": "72",
+      "nome": "PEMAZA SANTAREM 2",
+      "cofre": "17843605570"
+    },
+    {
+      "uf": "PA",
+      "loja": "73",
+      "nome": "PEMAZA 73 ANANINDEUA",
+      "cofre": "22695"
+    },
+    {
+      "uf": "AM",
+      "loja": "74",
+      "nome": "SM DISTRIBUIDORA DE AUTO PECAS LTDA",
+      "cofre": "21309"
+    },
+    {
+      "uf": "AP",
+      "loja": "76",
+      "nome": "PEMAZA ELIEZER LEVY",
+      "cofre": "17843000870"
+    },
+    {
+      "uf": "AP",
+      "loja": "79",
+      "nome": "PMZ MARCO ZERO MACAPA",
+      "cofre": "17843603270"
+    },
+    {
+      "uf": "MA",
+      "loja": "80",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "27992"
+    },
+    {
+      "uf": "AM",
+      "loja": "81",
+      "nome": "PEMAZA 025 TORQUATO TAPAJOS",
+      "cofre": "24787"
+    },
+    {
+      "uf": "AM",
+      "loja": "82",
+      "nome": "PEMAZA 82 COLONIA  TERRA NOVA",
+      "cofre": "20171"
+    },
+    {
+      "uf": "AM",
+      "loja": "83",
+      "nome": "PEMAZA 83 CACHOEIRINHA",
+      "cofre": "20551"
+    },
+    {
+      "uf": "MT",
+      "loja": "84",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22041"
+    },
+    {
+      "uf": "AM",
+      "loja": "85",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "22159"
+    },
+    {
+      "uf": "AM",
+      "loja": "86",
+      "nome": "PEMAZA 86 MAX TEIXEIRA",
+      "cofre": "21841"
+    },
+    {
+      "uf": "AM",
+      "loja": "87",
+      "nome": "PEMAZA  87 COLONIA TERRA NOVA",
+      "cofre": "24259"
+    },
+    {
+      "uf": "AM",
+      "loja": "88",
+      "nome": "PMZ DISTRIBUIDORA 88 DESEMBARGADOR",
+      "cofre": "20572"
+    },
+    {
+      "uf": "AM",
+      "loja": "89",
+      "nome": "PMZ AM AV TEFE",
+      "cofre": "21596"
+    },
+    {
+      "uf": "PA",
+      "loja": "90",
+      "nome": "PMZ 90 CASTANHAL",
+      "cofre": "21586"
+    },
+    {
+      "uf": "AP",
+      "loja": "92",
+      "nome": "PEMAZA PECAS E PNEUS",
+      "cofre": "39013600370"
+    },
+    {
+      "uf": "RR",
+      "loja": "96",
+      "nome": "PMZ ATACADO DE PECAS LTDA",
+      "cofre": "24211"
+    },
+    {
+      "uf": "MA",
+      "loja": "97",
+      "nome": "PMZ DISTRIBUIDORA SA",
+      "cofre": "20179"
+    }
+  ],
+  "brinks_map": {
+    "21885": "1",
+    "23882": "2",
+    "24218": "3",
+    "25982": "4",
+    "25291": "5",
+    "26656": "6",
+    "24043": "7",
+    "23293": "8",
+    "25112": "9",
+    "22662": "10",
+    "20406": "11",
+    "26360": "12",
+    "23049": "13",
+    "20493": "14",
+    "26364": "15",
+    "22828": "16",
+    "20143": "17",
+    "20323": "18",
+    "20602": "19",
+    "21130": "20",
+    "22338": "21",
+    "22226": "22",
+    "23762": "24",
+    "21401": "30",
+    "21411": "31",
+    "20099": "32",
+    "23094": "33",
+    "23087": "34",
+    "22146": "35",
+    "21416": "36",
+    "20210": "37",
+    "21404": "38",
+    "21405": "41",
+    "24128": "42",
+    "21400": "43",
+    "21183": "44",
+    "22257": "45",
+    "23687": "47",
+    "21363": "48",
+    "20767": "50",
+    "22141": "51",
+    "31012": "52",
+    "24229": "54",
+    "20441": "61",
+    "20446": "65",
+    "22310": "66",
+    "22985": "67",
+    "23630": "68",
+    "21174": "69",
+    "22185": "70",
+    "21522": "71",
+    "22695": "73",
+    "21309": "74",
+    "27992": "80",
+    "24787": "81",
+    "20171": "82",
+    "20551": "83",
+    "22041": "84",
+    "22159": "85",
+    "21841": "86",
+    "24259": "87",
+    "20572": "88",
+    "21596": "89",
+    "21586": "90",
+    "24211": "96",
+    "20179": "97"
+  },
+  "prossegur_map": {
+    "PMZ LJ 39 SANTARENZINHO": [
+      "39"
+    ],
+    "PEMAZA NACOES UNIDAS": [
+      "40"
+    ],
+    "PEMAZA RUA DO ACAI": [
+      "46"
+    ],
+    "PEMAZA BURITIZAL": [
+      "49"
+    ],
+    "PEMAZA BOA ESPERANCA": [
+      "55"
+    ],
+    "PMZ RUROPOLIS": [
+      "57"
+    ],
+    "PMZ URUARA": [
+      "59"
+    ],
+    "PEMAZA ALTAMIRA": [
+      "58"
+    ],
+    "PEMAZA SANTAREM": [
+      "60"
+    ],
+    "PEMAZA PARAUAPEBAS": [
+      "63"
+    ],
+    "PEMAZA SANTAREM 2":[
+      "72"
+    ],
+    "PEMAZA ELIEZER LEVY": [
+      "76"
+    ],
+    "PMZ MARCO ZERO MACAPA": [
+      "79"
+    ],
+    "PEMAZA PECAS E PNEUS": [
+      "92"
+    ]
+  }
+}
