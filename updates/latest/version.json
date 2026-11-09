@@ -1,6 +1,6 @@
 {
-  "version": "2.6",
-  "released_at": "2026-11-09 13:32:35",
+  "version": "2.7",
+  "released_at": "2026-11-09 14:34:09",
   "base_url": "https://raw.githubusercontent.com/pliskin15/Contablauncher/updates/updates/latest",
   "files": {
     "_internal/_asyncio.pyd": {
@@ -80,7 +80,7 @@
       "size": 503520
     },
     "_internal/base_library.zip": {
-      "sha256": "0a9927a055eaa1303f56318f0a388f37001c27ecd407018a389042952577e01a",
+      "sha256": "92103ba69eac255a824582f5425dab903ab4deadc218177fea145ca9a252ee99",
       "size": 1394319
     },
     "_internal/certifi/cacert.pem": {
@@ -9884,8 +9884,8 @@
       "size": 13758
     },
     "Contabilidade.exe": {
-      "sha256": "36d1f4d92b8fbee878efd993949deef5c50fbe8c38a9ac51ac270e650c9cb4c3",
-      "size": 30326013
+      "sha256": "fd06bc0c5044ba5859265ae5bb53b18b79723a18bd5462571569ff22ae979ff6",
+      "size": 30327251
     },
     "core/__init__.py": {
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -10020,7 +10020,7 @@
       "size": 22555
     },
     "versao.txt": {
-      "sha256": "8b6f2a818985188f55a3e4e26e239c69a21b70e1306b5231e65694ea4a547128",
+      "sha256": "884784765bb9a529058c24f63946a7e21a20394a4502e6db91f97e7e3fd9dda5",
       "size": 4
     }
   }
