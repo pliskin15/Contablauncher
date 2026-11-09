@@ -18,6 +18,7 @@ import json
 import os
 from core import ui_theme as theme
 from core import auth, login, versao, usuarios_painel, shell
+from core import foto as foto_mod
 from core.theme import (
     T, aplicar_estilos_ttk, botao_tema,
     registrar_callback, tema_atual,
@@ -696,6 +697,22 @@ def _open_energia(root: tk.Tk, on_close):
     return win
 
 
+def _open_ticketlog(root: tk.Tk, on_close):
+    import ticketlog
+
+    win = tk.Toplevel(root)
+    ticketlog._build_content(win)
+
+    win.update_idletasks()
+    w, h = win.winfo_width(), win.winfo_height()
+    x = (win.winfo_screenwidth()  - w) // 2
+    y = (win.winfo_screenheight() - h) // 2
+    win.geometry(f"{w}x{h}+{x}+{y}")
+
+    win.protocol("WM_DELETE_WINDOW", lambda: on_close(win))
+    return win
+
+
 def _open_folha_pagamento(root: tk.Tk, on_close):
     import fopag_v2
 
@@ -921,6 +938,12 @@ MODULES = [
         "factory": _open_energia,
     },
     {
+        "emoji":    "🎫",
+        "title":    "Relatório Ticket Log",
+        "subtitle": "Concilia, dia a dia, o relatório Ticket Log (GOODCARD) com o Razão",
+        "factory":  _open_ticketlog,
+    },
+    {
         "emoji":    "🧮",
         "title":    "Folha de Pagamento x Contábil",
         "subtitle": "Compara lançamentos por conta (COD_EVENTO) com a Folha Analítica em PDF",
@@ -943,7 +966,7 @@ MODULES = [
 GRUPOS = [
     ("Conciliações",     ["Conciliador GETNET e PIX", "Vendas GOODCARD", "TEF Autorização",
                           "Conciliador de Contas e Livro Entrada", "Conciliação de Energia",
-                          "Adiantamentos", "Robô de Busca"]),
+                          "Relatório Ticket Log", "Adiantamentos", "Robô de Busca"]),
     ("Fiscal",           ["Central Fiscal", "Controle de Obrigações","Livro Fiscal Saída", "Notas Fiscais", "Conferência Legado x Protheus",
                           "Consulta DAI",
                           "Consulta CT-e", "Conversor NF-e"]),
@@ -1000,6 +1023,7 @@ EMBUTIR = {
     "TEF Autorização":                       _embutir("conciliacao.tef_autorizacao"),
     "Gerador TXT Protheus":                  _embutir("protheus.painel"),
     "Conciliação de Energia":                _embutir("energia"),
+    "Relatório Ticket Log":                  _embutir("ticketlog"),
     "Folha de Pagamento x Contábil":         _embutir("fopag_v2"),
     "Conversor NF-e":                        _embutir("transmit"),
 }
@@ -1164,6 +1188,119 @@ class MenuTela(tk.Frame):
 #  TELA: PERFIL — MenuPerfil do Prisma
 # ══════════════════════════════════════════════════════════════════════════════
 
+class EditarPerfilDialog(tk.Toplevel):
+    """Foto, nome, e-mail e (opcional) troca de senha do próprio usuário."""
+
+    def __init__(self, shell_: "MenuPrincipal"):
+        super().__init__(shell_)
+        self._shell = shell_
+        self.u = auth.usuario_publico()
+        self._foto = self.u.get("foto") or None          # data URI atual (None = sem foto)
+        self.title("Editar perfil")
+        self.configure(bg=theme.CARD_BG)
+        self.resizable(False, False)
+        self.transient(shell_)
+
+        corpo = tk.Frame(self, bg=theme.CARD_BG, padx=28, pady=22)
+        corpo.pack()
+
+        # foto
+        topo = tk.Frame(corpo, bg=theme.CARD_BG)
+        topo.pack(fill="x", pady=(0, 14))
+        self._av = shell.Avatar(topo, self._escolher_foto, tamanho=96)
+        self._av.configure(bg=theme.CARD_BG)
+        self._av.pack(side="left")
+        bts = tk.Frame(topo, bg=theme.CARD_BG)
+        bts.pack(side="left", padx=18)
+        shell.botao(bts, "📷  Escolher foto…", self._escolher_foto, "secundario", pady=5).pack(anchor="w")
+        shell.botao(bts, "Remover foto", self._remover_foto, "flat", bg_pai=theme.CARD_BG,
+                    pady=3).pack(anchor="w", pady=(4, 0))
+        self._redesenhar_avatar()
+
+        self._nome = self._campo(corpo, "Nome", self.u.get("nome", ""))
+        self._email = self._campo(corpo, "E-mail", self.u.get("email", ""))
+
+        tk.Frame(corpo, bg=theme.GRID_LINE, height=1).pack(fill="x", pady=(16, 6))
+        shell.rotulo_secao(corpo, "Trocar senha (opcional)", bg=theme.CARD_BG).pack(anchor="w", pady=(4, 0))
+        self._atual = self._campo(corpo, "Senha atual", "", senha=True)
+        self._nova = self._campo(corpo, f"Nova senha (mín. {login.SENHA_MIN} caracteres)", "", senha=True)
+        self._conf = self._campo(corpo, "Confirmar nova senha", "", senha=True)
+
+        self._erro = tk.Label(corpo, text="", bg=theme.CARD_BG, fg=theme.ACCENT_RED, font=("Segoe UI", 9),
+                              wraplength=360, justify="left")
+        self._erro.pack(anchor="w", pady=(10, 0))
+        rodape = tk.Frame(corpo, bg=theme.CARD_BG)
+        rodape.pack(fill="x", pady=(10, 0))
+        shell.botao(rodape, "Salvar", self._salvar, "primario").pack(side="right")
+        shell.botao(rodape, "Cancelar", self.destroy, "secundario").pack(side="right", padx=8)
+
+        self.bind("<Escape>", lambda _e: self.destroy())
+        self.bind("<Return>", lambda _e: self._salvar())
+        self.update_idletasks()
+        x = shell_.winfo_rootx() + (shell_.winfo_width() - self.winfo_reqwidth()) // 2
+        y = shell_.winfo_rooty() + max((shell_.winfo_height() - self.winfo_reqheight()) // 3, 0)
+        self.geometry(f"+{max(x, 0)}+{max(y, 0)}")
+        self.grab_set()
+        self._nome.focus_set()
+
+    @staticmethod
+    def _campo(pai, rotulo: str, valor: str, senha: bool = False) -> tk.Entry:
+        tk.Label(pai, text=rotulo, bg=theme.CARD_BG, fg=theme.FG_MUTED, font=("Segoe UI", 9),
+                 anchor="w").pack(fill="x", pady=(10, 2))
+        e = tk.Entry(pai, width=44, show="•" if senha else "", bg=theme.SURFACE2, fg=theme.FG_TEXT,
+                     insertbackground=theme.FG_TEXT, relief="flat", font=("Segoe UI", 10),
+                     highlightthickness=1, highlightbackground=theme.GRID_LINE,
+                     highlightcolor=theme.ACCENT_CYAN)
+        e.pack(fill="x", ipady=5)
+        e.insert(0, valor)
+        return e
+
+    def _redesenhar_avatar(self) -> None:
+        self._av.set_usuario(self._nome.get() if hasattr(self, "_nome") else self.u.get("nome", ""),
+                             self._foto)
+
+    def _escolher_foto(self) -> None:
+        caminho = filedialog.askopenfilename(parent=self, title="Escolher foto de perfil",
+                                             filetypes=foto_mod.TIPOS_ARQUIVO)
+        if not caminho:
+            return
+        try:
+            self._foto = foto_mod.processar(caminho)
+        except Exception as exc:
+            self._erro.config(text=f"Não foi possível usar essa imagem: {exc}")
+            return
+        self._erro.config(text="")
+        self._redesenhar_avatar()
+
+    def _remover_foto(self) -> None:
+        self._foto = None
+        self._redesenhar_avatar()
+
+    def _salvar(self) -> None:
+        nome, email = self._nome.get().strip(), self._email.get().strip()
+        atual, nova, conf = self._atual.get(), self._nova.get(), self._conf.get()
+        trocar_senha = bool(atual or nova or conf)
+        if trocar_senha:
+            if not atual:
+                return self._erro.config(text="Informe a senha atual para trocar a senha.")
+            if len(nova) < login.SENHA_MIN:
+                return self._erro.config(text=f"A nova senha deve ter pelo menos {login.SENHA_MIN} caracteres.")
+            if nova != conf:
+                return self._erro.config(text="A confirmação não confere com a nova senha.")
+        try:
+            if trocar_senha:                      # valida a senha atual antes de gravar qualquer coisa
+                auth.alterar_senha(self.u["username"], atual, nova)
+            auth.atualizar_perfil(self.u["username"], nome, email, self._foto)
+        except ValueError as exc:
+            return self._erro.config(text=str(exc))
+        except Exception:
+            traceback.print_exc()
+            return self._erro.config(text="Não foi possível salvar. Verifique a conexão e tente de novo.")
+        self._shell.set_usuario(auth.get_current_user())      # cabeçalho + tela de perfil
+        self.destroy()
+        messagebox.showinfo("Perfil", "Perfil atualizado.", parent=self._shell)
+
+
 class PerfilTela(tk.Frame):
     def __init__(self, workspace: "Workspace"):
         super().__init__(workspace, bg=theme.BG_APP)
@@ -1177,9 +1314,9 @@ class PerfilTela(tk.Frame):
         dentro = tk.Frame(cartao, bg=theme.CARD_BG, padx=18, pady=16)
         dentro.pack(fill="x")
         u = auth.usuario_publico()
-        av = shell.Avatar(dentro, lambda: None, tamanho=48)
-        av.configure(bg=theme.CARD_BG, cursor="")
-        av.set_usuario(u.get("nome", ""))
+        av = shell.Avatar(dentro, lambda: EditarPerfilDialog(workspace.shell), tamanho=64)
+        av.configure(bg=theme.CARD_BG)
+        av.set_usuario(u.get("nome", ""), u.get("foto", ""))
         av.pack(side="left")
         txt = tk.Frame(dentro, bg=theme.CARD_BG)
         txt.pack(side="left", padx=14)
@@ -1196,8 +1333,9 @@ class PerfilTela(tk.Frame):
             return b
 
         sh = self._ws.shell
+        acao("✏️  Editar perfil", lambda: EditarPerfilDialog(sh))
         if u.get("role") == "admin":
-            acao("👥  Usuários e funções", sh.abrir_usuarios)
+            acao("👥  Usuários e funções", sh.abrir_usuarios, "secundario")
         acao("🔄  Trocar usuário", sh.trocar_usuario, "secundario")
         acao("← Voltar ao Menu", lambda: self._ws.mostrar("menu"), "secundario")
         tk.Frame(col, bg=theme.BG_APP, height=24).pack()
@@ -1381,7 +1519,7 @@ class MenuPrincipal(tk.Tk):
     def set_usuario(self, user: dict | None):
         """Mostra quem está logado e monta os menus só com os módulos da função dele."""
         u = auth.usuario_publico(user)
-        self.header.atualizar_usuario(u.get("nome", ""), u.get("role", ""))
+        self.header.atualizar_usuario(u.get("nome", ""), u.get("role", ""), u.get("foto", ""))
         self.atualizar_modulos()
         if not self._workspaces:
             self.nova_guia()

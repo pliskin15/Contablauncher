@@ -1,6 +1,6 @@
 {
-  "version": "2.5",
-  "released_at": "2026-11-06 08:24:56",
+  "version": "2.6",
+  "released_at": "2026-11-09 13:32:35",
   "base_url": "https://raw.githubusercontent.com/pliskin15/Contablauncher/updates/updates/latest",
   "files": {
     "_internal/_asyncio.pyd": {
@@ -80,7 +80,7 @@
       "size": 503520
     },
     "_internal/base_library.zip": {
-      "sha256": "252c136748e815488867e85416cc2ded2e48f4d77660788e6db0410e9a2a7bf7",
+      "sha256": "0a9927a055eaa1303f56318f0a388f37001c27ecd407018a389042952577e01a",
       "size": 1394319
     },
     "_internal/certifi/cacert.pem": {
@@ -9884,8 +9884,8 @@
       "size": 13758
     },
     "Contabilidade.exe": {
-      "sha256": "58ec270403e5c8aea7aa7b79558edb01ba4ac04ba374b8942502a6930e451370",
-      "size": 30290211
+      "sha256": "36d1f4d92b8fbee878efd993949deef5c50fbe8c38a9ac51ac270e650c9cb4c3",
+      "size": 30326013
     },
     "core/__init__.py": {
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -9956,8 +9956,8 @@
       "size": 43406
     },
     "menu_principal.py": {
-      "sha256": "c6b93357ee4579f30d572d08c4a2ddff0c0a1cc3e0d1af2e1476a329ee237eb5",
-      "size": 62918
+      "sha256": "d91c3a8b1ba41833752061c1a4abe332c49fd2a4b668a99b204415f8b1e5a567",
+      "size": 69556
     },
     "notas/__init__.py": {
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -10011,12 +10011,16 @@
       "sha256": "8030d52e9b6273747c12c27594db5a4fd5d68182a81b9a7518d9c4b092aab898",
       "size": 8644
     },
+    "ticketlog.py": {
+      "sha256": "60cecdb48a146532e30187d2e2b9d070feeb7b1f2a80f050bace80198b5e6732",
+      "size": 35804
+    },
     "transmit.py": {
       "sha256": "7f49ccda70223c6726cddf5b67eff3a3779f588591503135c1c2492e77618d6d",
       "size": 22555
     },
     "versao.txt": {
-      "sha256": "686513ed91231892fbf0c4e72acee20264caa8538e8389157a942a808dba6531",
+      "sha256": "8b6f2a818985188f55a3e4e26e239c69a21b70e1306b5231e65694ea4a547128",
       "size": 4
     }
   }
